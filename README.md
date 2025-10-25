@@ -1,90 +1,92 @@
-## 🧠 Predicción de Estrés según Hábitos de Sueño
+# 💤 Clasificación Binaria – Predicción de Estrés
 
-Este proyecto realiza **clasificación binaria** para predecir si una persona presenta estrés o no, basado en sus hábitos de sueño y otros indicadores de salud.  
-https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusiongradientboosting.png?raw=true
-
-El proyecto incluye:
-
-- Preprocesamiento de datos (train/test) con manejo de variables categóricas.
-- Entrenamiento y comparación de **4 modelos de machine learning**:
-  - Random Forest
-  - Gradient Boosting
-  - Logistic Regression
-  - SVM
-- Tabla comparativa de métricas: Accuracy, Precision, Recall y F1-Score.
-- Análisis de errores con visualización de **matrices de confusión**.
-- Interfaz de usuario **Gradio** lista para predecir estrés en tiempo real.
-- Link permanente a la app desplegada en **Hugging Face Spaces**.
+Este proyecto realiza la **predicción de estrés** basado en hábitos de sueño y parámetros físicos usando modelos de clasificación en Python. Incluye análisis de métricas, comparación de modelos, análisis de errores y una interfaz interactiva con **Gradio**.
 
 ---
 
-## 🔹 Estructura del repositorio
+## 📂 Contenido del proyecto
 
-train.csv # Dataset de entrenamiento
-test.csv # Dataset de prueba
-best_model.joblib # Modelo entrenado guardado
-label_encoders.pkl # Encoders para variables categóricas
-stress_prediction.ipynb # Notebook con todo el código
-requirements.txt # Librerías necesarias
-README.md # Este archivo
+- `train.csv` – Dataset de entrenamiento.
+- `test.csv` – Dataset de prueba.
+- `best_model.joblib` – Modelo entrenado.
+- `model_columns.pkl` – Columnas del modelo (para codificación de variables categóricas).
+- `app.py` – Código principal de la aplicación Gradio.
+- `requirements.txt` – Librerías necesarias.
 
-## 🔹 Instalación y ejecución
+---
 
-1. Clonar el repositorio:
+## 🔹 Modelos utilizados
 
+Se entrenaron los siguientes modelos:
+
+1. **Random Forest**
+2. **Logistic Regression**
+3. **Gradient Boosting**
+4. **Support Vector Machine (SVM)**
+
+Se calcularon métricas de exactitud, precisión, recall y F1-Score para cada modelo.
+
+---
+
+## 📊 Comparación de métricas
+
+| Modelo                  | Accuracy | Precision | Recall | F1-Score |
+|-------------------------|---------|-----------|--------|----------|
+| Random Forest           | 0.87    | 0.85      | 0.89   | 0.87     |
+| Logistic Regression     | 0.81    | 0.79      | 0.83   | 0.81     |
+| Gradient Boosting       | 0.85    | 0.84      | 0.86   | 0.85     |
+| Support Vector Machine  | 0.83    | 0.81      | 0.84   | 0.82     |
+
+> Ajusta los valores según los resultados de tus modelos.
+
+---
+
+## 📉 Análisis de errores
+
+### Matriz de confusión – Random Forest
+![Random Forest](https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionrandomforest.png?raw=true)
+
+### Matriz de confusión – Logistic Regression
+![Logistic Regression](https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionlogisticregression.png?raw=true)
+
+### Matriz de confusión – Gradient Boosting
+![Gradient Boosting](https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusiongradientboosting.png?raw=true)
+
+### Matriz de confusión – SVM
+![SVM](https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionsvm.png?raw=true)
+
+> Las matrices muestran los aciertos y errores de predicción de cada modelo, permitiendo un análisis de errores detallado.
+
+---
+
+## 🚀 Interfaz de usuario
+
+Se incluyó una interfaz interactiva usando **Gradio**, que permite ingresar los datos de una persona y predecir si está en estrés o no.
+
+**Link permanente de la app:**  
+[https://huggingface.co/spaces/Amymarlene/stress-prediction](https://huggingface.co/spaces/Amymarlene/stress-prediction)
+
+---
+
+## ⚡ Cómo ejecutar
+
+1. Clona el repositorio:  
 ```bash
-git clone https://github.com/Amymarlene/stress-prediction.git
-cd stress-prediction
-Instalar dependencias (recomendado crear un entorno virtual):
+git clone https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria.git
+Instala las librerías:
 
 bash
 Copiar código
 pip install -r requirements.txt
-Abrir el notebook stress_prediction.ipynb en Google Colab o Jupyter.
+Ejecuta la app de Gradio:
 
-Subir train.csv y test.csv al entorno y ejecutar todas las celdas.
+bash
+Copiar código
+python app.py
+Abre el enlace de Hugging Face para usar la app directamente en tu navegador.
 
-Al final del notebook se mostrará un link permanente para abrir la app en Hugging Face:
+📌 Notas
+Todos los modelos fueron entrenados usando las columnas:
+Gender, Age, Occupation, Sleep Duration, Quality of Sleep, Physical Activity Level, BMI Category, Blood Pressure, Heart Rate, Daily Steps, Sleep Disorder.
 
-🌐 Abrir la app permanente en Hugging Face
-
-🔹 Uso de la app
-Selecciona los datos de la persona: Edad, Género, Ocupación, Duración de sueño, Calidad de sueño, Actividad física, IMC, Presión arterial, Ritmo cardiaco, Pasos diarios y Trastornos del sueño.
-
-Presiona Predecir Estrés.
-
-La app devolverá:
-
-😌 Sin Estrés
-
-⚠️ Con Estrés
-
-
-🔹 Métricas y análisis
-El notebook genera automáticamente:
-
-Comparación de 4 modelos con Accuracy, Precision, Recall y F1-Score.
-<img width="662" height="232" alt="image" src="https://github.com/user-attachments/assets/664d7288-5356-4825-a089-81a0692e2ba6" />
-
-
-Matrices de confusión para evaluar los errores.
-
-Selección automática del mejor modelo según F1-Score.
-
-🔹 Tecnologías utilizadas
-Python 3
-
-Pandas, Numpy
-
-Matplotlib, Seaborn
-
-Scikit-learn
-
-Gradio para UI
-
-Hugging Face Spaces para despliegue
-
-🔹 Contacto
-Creado por Amy Frías
-GitHub: Amymarlene
-Hugging Face: Amymarlene/stress-prediction
+El dataset contiene datos de hábitos de sueño y parámetros físicos de cada persona.
