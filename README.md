@@ -12,6 +12,10 @@ El proyecto incluye:
   - SVM
 - Tabla comparativa de métricas: Accuracy, Precision, Recall y F1-Score.
 - Análisis de errores con visualización de **matrices de confusión**.
+- https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusiongradientboosting.png?raw=true
+https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionlogisticregression.png?raw=true
+https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionrandomforest.png?raw=true
+https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionsvm.png?raw=true
 - Interfaz de usuario **Gradio** lista para predecir estrés en tiempo real.
 - Link permanente a la app desplegada en **Hugging Face Spaces**.
 
@@ -19,14 +23,14 @@ El proyecto incluye:
 
 ## 🔹 Estructura del repositorio
 
-.
-├── train.csv # Dataset de entrenamiento
-├── test.csv # Dataset de prueba
-├── best_model.joblib # Modelo entrenado guardado
-├── label_encoders.pkl # Encoders para variables categóricas
-├── stress_prediction.ipynb # Notebook con todo el código
-├── requirements.txt # Librerías necesarias
-└── README.md # Este archivo
+train.csv # Dataset de entrenamiento
+test.csv # Dataset de prueba
+best_model.joblib # Modelo entrenado guardado
+label_encoders.pkl # Encoders para variables categóricas
+stress_prediction.ipynb # Notebook con todo el código
+requirements.txt # Librerías necesarias
+README.md # Este archivo
+
 ## 🔹 Instalación y ejecución
 
 1. Clonar el repositorio:
@@ -57,7 +61,6 @@ La app devolverá:
 😌 Sin Estrés
 
 ⚠️ Con Estrés
-<img width="1708" height="722" alt="image" src="https://github.com/user-attachments/assets/3324ca5f-1126-4ef5-9ca2-2d666d0be618" />
 
 
 🔹 Métricas y análisis
@@ -68,11 +71,6 @@ Comparación de 4 modelos con Accuracy, Precision, Recall y F1-Score.
 
 
 Matrices de confusión para evaluar los errores.
-https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusiongradientboosting.png?raw=true
-https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionlogisticregression.png?raw=true
-https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionrandomforest.png?raw=true
-https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionsvm.png?raw=true
-
 
 Selección automática del mejor modelo según F1-Score.
 
