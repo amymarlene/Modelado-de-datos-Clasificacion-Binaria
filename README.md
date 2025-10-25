@@ -68,6 +68,10 @@ Comparación de 4 modelos con Accuracy, Precision, Recall y F1-Score.
 
 
 Matrices de confusión para evaluar los errores.
+https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusiongradientboosting.png?raw=true
+https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionlogisticregression.png?raw=true
+https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionrandomforest.png?raw=true
+https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionsvm.png?raw=true
 
 
 Selección automática del mejor modelo según F1-Score.
