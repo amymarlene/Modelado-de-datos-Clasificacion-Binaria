@@ -3,20 +3,20 @@
 Este proyecto predice la presencia de **estrés** en función de hábitos de sueño y otras variables de salud, utilizando modelos de clasificación y una interfaz web interactiva con **Gradio**.
 Del repositorio de hábitos de sueño se realizó lo siguiente:
 
-Modelo de datos e interfaz web:
+**Modelo de datos e interfaz web:**
 Se desarrolló un modelo de predicción de estrés basado en hábitos de sueño y se creó una interfaz web usando Gradio, que permite al usuario ingresar datos y obtener predicciones de manera interactiva.
 
-Link del proyecto:
+**Link del proyecto:**
 El proyecto se encuentra desplegado en Hugging Face Spaces con el siguiente link permanente:
 https://huggingface.co/spaces/Amymarlene/stress-prediction
 
-Modelo de datos:
+**Modelo de datos:**
 Se trabajó con el dataset train.csv y test.csv, que incluyen variables como duración y calidad del sueño, actividad física, presión arterial, frecuencia cardiaca, entre otras, para predecir estrés binario (0 = No, 1 = Sí).
 
-Entrenamiento de un modelo base:
+**Entrenamiento de un modelo base:**
 Se entrenó inicialmente un Logistic Regression como modelo base, utilizando train.csv.
 
-Cálculo de métricas para el modelo base:
+**Cálculo de métricas para el modelo base:**
 Para el modelo base se calcularon las métricas:
 
 Precision: capacidad del modelo para no etiquetar como positivo un caso negativo.
@@ -29,7 +29,7 @@ Specificity (Especificidad): capacidad del modelo para identificar correctamente
 
 Matriz de Confusión: visualización de aciertos y errores por clase.
 
-Uso de diferentes modelos y tabulación de métricas:
+**Uso de diferentes modelos y tabulación de métricas:**
 Se entrenaron y evaluaron al menos 4 modelos:
 
 Logistic Regression
@@ -41,13 +41,13 @@ Gradient Boosting
 Support Vector Machine (SVM)
 Se tabularon las métricas mencionadas para comparar su desempeño.
 
-Selección del mejor modelo:
+**Selección del mejor modelo:**
 Se eligió el Random Forest como mejor modelo basándose en la exactitud y F1-Score, dado que estas métricas equilibran precisión y recall, lo cual es importante en problemas de clasificación binaria donde ambos errores (falsos positivos y falsos negativos) tienen relevancia.
 
-Análisis de error:
+**Análisis de error:**
 Se revisaron casos donde el modelo predijo incorrectamente y se observó que la mayoría de errores ocurren en sujetos con patrones de sueño atípicos o valores límite en actividad física y calidad de sueño. Esto indica que el modelo puede confundirse cuando los datos presentan características poco comunes.
 
-UI con Gradio:
+**UI con Gradio:**
 Se desarrolló una interfaz web con Gradio que permite al usuario:
 
 Ingresar datos personales y hábitos de sueño.
