@@ -12,10 +12,6 @@ El proyecto incluye:
   - SVM
 - Tabla comparativa de métricas: Accuracy, Precision, Recall y F1-Score.
 - Análisis de errores con visualización de **matrices de confusión**.
-- https://raw.github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusiongradientboosting.png?raw=true
-https://raw.github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionlogisticregression.png?raw=true
-https://raw.github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionrandomforest.png?raw=true
-https://raw.github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionsvm.png?raw=true
 - Interfaz de usuario **Gradio** lista para predecir estrés en tiempo real.
 - Link permanente a la app desplegada en **Hugging Face Spaces**.
 
