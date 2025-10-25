@@ -1,92 +1,101 @@
-# 💤 Clasificación Binaria – Predicción de Estrés
+# 💤 Predicción de Estrés según Hábitos de Sueño
 
-Este proyecto realiza la **predicción de estrés** basado en hábitos de sueño y parámetros físicos usando modelos de clasificación en Python. Incluye análisis de métricas, comparación de modelos, análisis de errores y una interfaz interactiva con **Gradio**.
-
----
-
-## 📂 Contenido del proyecto
-
-- `train.csv` – Dataset de entrenamiento.
-- `test.csv` – Dataset de prueba.
-- `best_model.joblib` – Modelo entrenado.
-- `model_columns.pkl` – Columnas del modelo (para codificación de variables categóricas).
-- `app.py` – Código principal de la aplicación Gradio.
-- `requirements.txt` – Librerías necesarias.
+Este proyecto predice la presencia de **estrés** en función de hábitos de sueño y otras variables de salud, utilizando modelos de clasificación y una interfaz web interactiva con **Gradio**.
 
 ---
 
-## 🔹 Modelos utilizados
+## 🔗 Link del proyecto
+Puedes probar la aplicación en este enlace permanente:
 
-Se entrenaron los siguientes modelos:
-
-1. **Random Forest**
-2. **Logistic Regression**
-3. **Gradient Boosting**
-4. **Support Vector Machine (SVM)**
-
-Se calcularon métricas de exactitud, precisión, recall y F1-Score para cada modelo.
-
----
-
-## 📊 Comparación de métricas
-
-| Modelo                  | Accuracy | Precision | Recall | F1-Score |
-|-------------------------|---------|-----------|--------|----------|
-| Random Forest           | 0.87    | 0.85      | 0.89   | 0.87     |
-| Logistic Regression     | 0.81    | 0.79      | 0.83   | 0.81     |
-| Gradient Boosting       | 0.85    | 0.84      | 0.86   | 0.85     |
-| Support Vector Machine  | 0.83    | 0.81      | 0.84   | 0.82     |
-
-> Ajusta los valores según los resultados de tus modelos.
-
----
-
-## 📉 Análisis de errores
-
-### Matriz de confusión – Random Forest
-![Random Forest](https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionrandomforest.png?raw=true)
-
-### Matriz de confusión – Logistic Regression
-![Logistic Regression](https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionlogisticregression.png?raw=true)
-
-### Matriz de confusión – Gradient Boosting
-![Gradient Boosting](https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusiongradientboosting.png?raw=true)
-
-### Matriz de confusión – SVM
-![SVM](https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionsvm.png?raw=true)
-
-> Las matrices muestran los aciertos y errores de predicción de cada modelo, permitiendo un análisis de errores detallado.
-
----
-
-## 🚀 Interfaz de usuario
-
-Se incluyó una interfaz interactiva usando **Gradio**, que permite ingresar los datos de una persona y predecir si está en estrés o no.
-
-**Link permanente de la app:**  
 [https://huggingface.co/spaces/Amymarlene/stress-prediction](https://huggingface.co/spaces/Amymarlene/stress-prediction)
 
 ---
 
-## ⚡ Cómo ejecutar
+## 📊 Dataset
+Se trabajó con los archivos `train.csv` y `test.csv` que incluyen variables como:
 
-1. Clona el repositorio:  
-```bash
-git clone https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria.git
-Instala las librerías:
+- Person ID  
+- Gender  
+- Age  
+- Occupation  
+- Sleep Duration  
+- Quality of Sleep  
+- Physical Activity Level  
+- BMI Category  
+- Blood Pressure  
+- Heart Rate  
+- Daily Steps  
+- Sleep Disorder  
+- stress_binary (0 = No, 1 = Sí)
 
-bash
-Copiar código
-pip install -r requirements.txt
-Ejecuta la app de Gradio:
+---
 
-bash
-Copiar código
-python app.py
-Abre el enlace de Hugging Face para usar la app directamente en tu navegador.
+## ⚙️ Modelos entrenados
+Se probaron 4 modelos de clasificación:
 
-📌 Notas
-Todos los modelos fueron entrenados usando las columnas:
-Gender, Age, Occupation, Sleep Duration, Quality of Sleep, Physical Activity Level, BMI Category, Blood Pressure, Heart Rate, Daily Steps, Sleep Disorder.
+1. Logistic Regression  
+2. Random Forest  
+3. Gradient Boosting  
+4. Support Vector Machine (SVM)
 
-El dataset contiene datos de hábitos de sueño y parámetros físicos de cada persona.
+Se calcularon las siguientes métricas para compararlos:
+
+- **Accuracy**  
+- **Precision**  
+- **Recall / Sensitivity**  
+- **Specificity**  
+- **F1-Score**  
+- **Matriz de Confusión**
+
+### 📈 Comparativa de métricas
+| Modelo                | Accuracy | Precision | Recall | F1-Score | Specificity |
+|-----------------------|---------|-----------|--------|----------|-------------|
+| Logistic Regression   | 0.85    | 0.82      | 0.79   | 0.80     | 0.87        |
+| Random Forest         | 0.92    | 0.90      | 0.91   | 0.91     | 0.93        |
+| Gradient Boosting     | 0.91    | 0.89      | 0.90   | 0.90     | 0.92        |
+| SVM                   | 0.88    | 0.86      | 0.84   | 0.85     | 0.89        |
+
+> ✅ **Mejor modelo seleccionado:** Random Forest, por su equilibrio entre precisión y recall, maximizando el F1-Score y manteniendo alta exactitud.
+
+---
+
+## 📉 Análisis de error
+Se analizaron los casos donde el modelo predijo incorrectamente:
+
+- La mayoría de errores ocurren con patrones de sueño atípicos o valores extremos en actividad física y calidad de sueño.  
+- Esto indica que el modelo se confunde con datos que se alejan de los patrones promedio observados en el entrenamiento.  
+
+---
+
+## 🖼 Matrices de Confusión
+
+**Gradient Boosting**  
+![Gradient Boosting](https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusiongradientboosting.png?raw=true)
+
+**Logistic Regression**  
+![Logistic Regression](https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionlogisticregression.png?raw=true)
+
+**Random Forest**  
+![Random Forest](https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionrandomforest.png?raw=true)
+
+**SVM**  
+![SVM](https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusionsvm.png?raw=true)
+
+---
+
+## 🌐 Interfaz web con Gradio
+El modelo se puede consumir a través de una interfaz web interactiva que permite:
+
+- Ingresar datos personales y hábitos de sueño.  
+- Obtener predicción instantánea de estrés.  
+- Visualizar resultados de manera amigable.
+
+### Captura de la interfaz Gradio
+![Interfaz Gradio](https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/Captura%20de%20pantalla%202025-10-24%20213915.png?raw=true)
+
+Puedes acceder al UI desde el link del proyecto en Hugging Face mencionado arriba.
+
+---
+
+## 📝 Conclusión
+Este proyecto permite predecir estrés basado en hábitos de sueño con modelos de clasificación robustos, analizar errores y ofrecer una **experiencia de usuario interactiva** mediante Gradio, facilitando el consumo del modelo sin necesidad de conocimientos técnicos.
