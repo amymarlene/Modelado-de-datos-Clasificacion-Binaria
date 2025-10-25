@@ -1,6 +1,7 @@
 ## 🧠 Predicción de Estrés según Hábitos de Sueño
 
 Este proyecto realiza **clasificación binaria** para predecir si una persona presenta estrés o no, basado en sus hábitos de sueño y otros indicadores de salud.  
+https://github.com/amymarlene/Modelado-de-datos-Clasificacion-Binaria/blob/main/confusiongradientboosting.png?raw=true
 
 El proyecto incluye:
 
